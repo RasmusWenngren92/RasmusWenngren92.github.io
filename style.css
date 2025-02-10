@@ -164,6 +164,7 @@ p{
   padding: var(--space-md);
   font-size: var(--font-size-lg);
   font-weight: bold;
+  text-align: center;
 }
 
 .card-body {
@@ -291,12 +292,12 @@ footer a{
       padding: var(--spacing-md);
   }
 }
-.employment
+
 .information{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: start;
-  gap: var(--space-lg);
+padding: var(--space-sm);
+}
+
+.language{
+  font-size: var(--font-size-lg);
 }
 
