@@ -122,7 +122,6 @@ p{
   padding: var(--space-md);
 }
 .card-header {
-  background-color: rgba(190, 186, 180, 0.1);
   padding: var(--space-md);
   font-size: var(--font-size-lg);
   font-weight: bold;
@@ -132,7 +131,6 @@ p{
 .card-body {
   padding: var(--space-sm);
   font-size: 16px;
-  background-color: rgba(190, 186, 180, 0.1);
 }
 .card img{
   width: 100%;
@@ -140,12 +138,12 @@ p{
   object-position: bottom;
   aspect-ratio: 16/9;
   object-fit: cover;
-  border-bottom: 2px solid var(--color-accent);
+  
 
 }
 .card-footer {
   
-  background-color: #333;
+  background-color: var(--color-gray-dark);
   padding: 10px;
   text-align: center;
   font-size: 14px;
@@ -330,38 +328,12 @@ padding: var(--space-sm);
   flex-direction: column;
   gap: 2rem;
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .portfolio-grid .card-body{
   text-align: center;
 }
-@media (min-width: 600px) {
-  .portfolio-grid .card {
-    display: flex; 
-    flex-direction: row; 
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-sm); 
-  
-  }
 
-  .portfolio-grid .card img {
-    width: 40%; 
-    height: auto;
-    object-fit: cover;
-    border-bottom: none; 
-    aspect-ratio: auto; 
-  }
-
-  .portfolio-grid .card-body {
-    padding: var(--space-sm);
-    font-size: 16px;
-    background-color: var(--color-gray-dark);
-    flex: 1; 
-  }
-  .portfolio-grid .card-header{
-    background-color: var(--color-gray-dark);
-  }
-}
 @media (max-width: 600px) {
   .nav-toggle-label {
     position: absolute;
@@ -402,6 +374,32 @@ padding: var(--space-sm);
 @media (min-width: 600px) {
   .grid {
       grid-template-columns: repeat(2, 1fr); 
+  }
+  .portfolio-grid .card {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm); 
+  
+  }
+
+  .portfolio-grid .card img {
+    width: 40%; 
+    height: auto;
+    object-fit: cover;
+    border-bottom: none; 
+    aspect-ratio: auto; 
+  }
+
+  .portfolio-grid .card-body {
+    padding: var(--space-sm);
+    font-size: 16px;
+    background-color: var(--color-gray-dark);
+    flex: 1; 
+  }
+  .portfolio-grid .card-header{
+    background-color: var(--color-gray-dark);
   }
 }
 
