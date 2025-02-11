@@ -288,7 +288,7 @@ padding: var(--space-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid transparent;
+  border: 2px 2px 5px 2px solid transparent;
 }
 
 .close-modal:hover {
