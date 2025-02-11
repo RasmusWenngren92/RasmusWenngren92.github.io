@@ -22,6 +22,7 @@ const firstEasterEgg = () => {
     modal.classList.add('eastereggModal');
     
     modal.innerHTML = `
+    <div id="eastereggModal-overlay" class="eastereggModal-overlay"></div>
         <h2>🎉 Congratz!</h2>
         <p>You found the easteregg! You really are 1337!</p>
         <button>Close</button>
