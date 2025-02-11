@@ -21,6 +21,7 @@ const firstEasterEgg = () => {
     modal.classList.add('eastereggModal');
     
     modal.innerHTML = `
+    
        <div class="eastereggModal-content">
             <button class="close-modal">&times;</button> 
             <h2>🎉 Congratz!</h2>
