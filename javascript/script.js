@@ -17,45 +17,45 @@ const firstEasterEgg = () => {
     let secretCode = '';
     const targetCode = '1337';
     
-    // Create modal element
     const modal = document.createElement('div');
     modal.classList.add('eastereggModal');
     
     modal.innerHTML = `
-    <div id="eastereggModal-overlay" class="eastereggModal-overlay"></div>
-        <h2>🎉 Congratz!</h2>
-        <p>You found the easteregg! You really are 1337!</p>
-        <button>Close</button>
+       <div class="eastereggModal-content">
+            <button class="close-modal">&times;</button> 
+            <h2>🎉 Congratz!</h2>
+            <p>You found the easter egg! You really are 1337!</p>
+        </div>
     `;
     document.body.appendChild(modal);
     console.log(modal);
-    // Add keyboard event listener
+  
     document.addEventListener('keyup', (event) => {
         secretCode += event.key;
-        console.log("Current code",secretCode);
-        // Keep only the last 4 characters
+
         if (secretCode.length > 4) {
             secretCode = secretCode.slice(-4);
         }
         
-        // Check if code matches
+
         if (secretCode === targetCode) {
-            console.log("Code Matched!");
-          modal.classList.add('show'); 
-            secretCode = ''; // Reset code
+            modal.classList.add('show');
+            secretCode = ''; 
         }
     });
   
-    // Close modal with fade-out effect
-    const button = modal.querySelector('button');
-    button.onclick = () => {
-        console.log("Closing modal...");
-      modal.classList.remove('show'); // Hide with transition
-      setTimeout(() => modal.style.display = 'none', 300); // Hide after transition
-    };
+     const closeButton = modal.querySelector('.close-modal');
+     closeButton.addEventListener('click', () => {
+         modal.classList.remove('show');
+     });
+ 
+     modal.addEventListener('click', (event) => {
+         if (event.target === modal) {
+             modal.classList.remove('show');
+         }
+     });
   };
   
-  // Initialize both Easter eggs
   document.addEventListener('DOMContentLoaded', () => {
     firstEasterEgg();
     secondEasterEgg();

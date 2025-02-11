@@ -268,6 +268,9 @@ padding: var(--space-sm);
   width: 90%;
   position: relative;
   animation: modalOpen 0.3s ease-out;
+  border: 2px solid var(--color-accent);
+  text-align: center;
+  
 }
 
 .close-modal {
@@ -278,8 +281,6 @@ padding: var(--space-sm);
   color: var(--color-text);
   font-size: var(--font-size-xl);
   transition: var(--transition);
-  
-  
   background-color: #483737; 
   width: 2rem;
   height: 2rem;
@@ -291,7 +292,7 @@ padding: var(--space-sm);
 }
 
 .close-modal:hover {
-  background-color: var(--color-accent);  
+  background-color: var(--color-gray-dark);  
   border-color: var(--color-text);
   transform: scale(1.1);
 }
@@ -364,7 +365,18 @@ padding: var(--space-sm);
     visibility: visible;  
     transition: opacity var(--transition), transform var(--transition), visibility 0s ease 0s; 
   }
-  
+  @media (max-width: 600px) { 
+    .eastereggModal {
+      align-items: center; 
+      padding-top: 0; 
+    }
+    
+    .eastereggModal-content {
+      width: 90%; 
+      max-width: 400px; 
+    }
+  }
+
 }
 @media (min-width: 600px) {
   .grid {
@@ -417,73 +429,68 @@ flex-wrap: wrap;
   text-decoration: none;
 }
 .eastereggModal {
+
+  display: none; 
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--color-gray-dark);
-  color: var(--color-text);
-  padding: var(--space-md);
-  border-radius: 5px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); 
   z-index: 1000;
-  font-size: var(--font-size-base);
-  border: 2px solid var(--color-accent);
-  transition: var(--transition);
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
-  transform: translate(-50%, -60%);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0s linear 0.3s;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40vh;
 
 }  
 .eastereggModal.show{
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+
+  display: flex;
+  
 }
 
-.eastereggModal h2{
+.eastereggModal-content h2{
   font-size: var(--font-size-xl);
   margin-bottom: var(--space-sm);
   color: var(--color-text);
   }
 
-  .eastereggModal p{
+  .eastereggModal-content p{
     margin-bottom: var(--space-md);
     color: var(--color-text);
   }
-
-  .eastereggModal button{
-    background-color: var(--color-accent);
+  .eastereggModal-content {
+    background-color: var(--color-gray-dark);
     color: var(--color-text);
-    border: none;
-    padding: var(--space-xs) var(--space-sm);
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: var(--font-size-sm);
+    padding: var(--space-lg);
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: modalOpen 0.3s ease-out;
+    border: 2px solid var(--color-accent);
+  }
+  .eastereggModal button{
+
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-md);
+    background-color: #483737;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    color: var(--color-text);
+    font-size: var(--font-size-xl);
     transition: var(--transition);
+    cursor: pointer;
   }
 
   .eastereggModal button:hover{
     background-color: var(--color-gray-medium);
+    border-color: var(--color-text);
+    transform: scale(1.1);
   }
-
-  .eastereggModal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    backdrop-filter: blur(5px); /* Soft blur effect */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out;
-    z-index: 999;
-}
-.eastereggModal-overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
