@@ -408,3 +408,6 @@ padding: var(--space-sm);
       grid-template-columns: repeat(3, 1fr); 
   }
 }
+.fa-brands{
+  font-size: var(--font-size-xl);
+}
