@@ -365,9 +365,9 @@ padding: var(--space-sm);
     visibility: visible;  
     transition: opacity var(--transition), transform var(--transition), visibility 0s ease 0s; 
   }
-  @media (max-width: 600px) { 
+  
     .eastereggModal {
-      align-items: center; 
+      align-items: start; 
       padding-top: 0; 
     }
     
@@ -375,7 +375,7 @@ padding: var(--space-sm);
       width: 90%; 
       max-width: 400px; 
     }
-  }
+  
 
 }
 @media (min-width: 600px) {
@@ -440,7 +440,7 @@ flex-wrap: wrap;
   z-index: 1000;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 40vh;
+  padding-top: 15vh;
 
 }  
 .eastereggModal.show{
@@ -494,3 +494,59 @@ flex-wrap: wrap;
     border-color: var(--color-text);
     transform: scale(1.1);
   }
+
+  @media print {
+
+    body {
+      background: white;
+      color: black;
+      font-size: 12pt;
+      padding: 2rem;
+    }
+  
+    nav, 
+    footer, 
+    .nav-menu, 
+    .hero, 
+    .btn, 
+    .modal, 
+    .eastereggModal {
+      display: none !important;
+    }
+  
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  
+    h1, h2, h3 {
+      color: black;
+      page-break-after: avoid;
+    }
+  
+    p {
+      text-align: left;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+  
+    .card {
+      border: 1px solid #ccc;
+      box-shadow: none;
+      break-inside: avoid;
+    }
+  
+    .card img {
+      display: none; 
+    }
+  
+    .card, .card-body, .card-header {
+      page-break-inside: avoid;
+    }
+  
+    .grid, .portfolio-grid {
+      display: block;
+    }
+
+  }
+  
